@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var currentResult = 0;
-  var userInput = "";
+  var userInput = ""; 
   var currentOperation = "";
 
   function saveUserInput () {

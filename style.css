@@ -31,6 +31,7 @@ body {
 
 #calcul ol li {
   width: 25%;
+  height: 50px;
   padding: 2%;
   display: table-cell;
   vertical-align: middle;

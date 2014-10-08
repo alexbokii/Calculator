@@ -56,36 +56,38 @@ $(function() {
   }
 
   function calculate() {
+    console.log("Call calculate");
     var result;
     if(operator === "+") {
-      result = parseInt(firstOperand) + parseInt(secondOperand);
+      result = parseFloat(firstOperand) + parseFloat(secondOperand);
     }
     else if (operator === "-") {
-      result = parseInt(firstOperand) - parseInt(secondOperand);
+      result = parseFloat(firstOperand) - parseFloat(secondOperand);
     }
     else if (operator === "*") {
-      result = parseInt(firstOperand) * parseInt(secondOperand);
+      result = parseFloat(firstOperand) * parseFloat(secondOperand);
     }
     else if (operator === "/") {
-      result = parseInt(firstOperand) / parseInt(secondOperand);
+      result = parseFloat(firstOperand) / parseFloat(secondOperand);
     }
     else if (operator === "x2") {
-      result = parseInt(firstOperand) * parseInt(firstOperand);
+      result = parseFloat(firstOperand) * parseFloat(firstOperand);
     }
     else if (operator === "&radic;") {
-      result = parseInt(firstOperand) / parseInt(secondOperand);
+      result = parseFloat(firstOperand) / parseFloat(secondOperand);
     }
     else if (operator === "sq-r") {
-      var sqRoot = parseInt(firstOperand); 
+      var sqRoot = parseFloat(firstOperand); 
       for(var i = 2; i < 100; i++) {
         if (i * i === sqRoot) {
           result = i;
         }
-        // else {
-        //   console.log("Sotty, number " + sqRoot + " dosn't have multiplier");
-        // }
       }
     }
+    if (result % 1 != 0) {
+      result = strip(result);
+    }
+
     $('.workplace').text(result);
     makeResultFirstOperand(result);
   }
@@ -103,4 +105,10 @@ $(function() {
     operator = undefined;
     $('.workplace').text("0");
   }
+
+  function strip(number) {
+    return (parseFloat(number.toPrecision(12)));
+}
+
+  //implement point
 });

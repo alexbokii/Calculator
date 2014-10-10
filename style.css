@@ -6,10 +6,12 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  background-color: #746180;
 }
 
 .container {
-  width: 700px;
+  width: 70%;
   margin: 0 auto;
   margin-top: 100px;
   -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.2);
@@ -23,6 +25,7 @@ body {
   padding-right: 20px;
   font-size: 2em;
   line-height: 2em;
+  background-color: #FEFEFE;
 }
 
 #calcul {
@@ -35,10 +38,10 @@ body {
   padding: 2%;
   display: table-cell;
   vertical-align: middle;
-  font-size: 15px;
+  font-size: 1.1em;
   text-align: center;
   list-style: none;
-  color: #222;
+  color: #2E5883;
   display: block;
   float: left;
 }
@@ -51,20 +54,15 @@ body {
   color: #444;
 }
 
-#operators li, #additional-signs li{
-  background-image: -webkit-linear-gradient(top,#D6D6D6,#D0D0D0);
-  background-color: #D6D6D6;
-  background-image: linear-gradient(top,#d6d6d6,#d0d0d0);
+#operators li, #additional-signs li {
   border: 1px solid #C6C6C6;
   color: #444;
+  background-color: #C9A9B6;
 }
 
 #additional-signs #count {
-  background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
-  background-color: #4D90FE;
-  background-image: linear-gradient(top,#4d90fe,#4787ed);
-  border: 1px solid #3079ED;
   color: #FEFEFE;
+  background-color: #D94D5C;
 }
 
 #numbers li:hover {

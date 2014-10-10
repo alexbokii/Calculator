@@ -16,7 +16,10 @@ $(function() {
 
   $("#clear-all").on('click', clearAll);
 
+  $("#clear-entry").on('click', clearEntry);
+
   function setOperand(el) {
+    console.log(el.text());
     if (firstOperand === 0 && operator === undefined) {
       firstOperand = el.text();
       $('.workplace').text(firstOperand);
@@ -73,9 +76,6 @@ $(function() {
     else if (operator === "x2") {
       result = parseFloat(firstOperand) * parseFloat(firstOperand);
     }
-    else if (operator === "&radic;") {
-      result = parseFloat(firstOperand) / parseFloat(secondOperand);
-    }
     else if (operator === "sq-r") {
       var sqRoot = parseFloat(firstOperand); 
       for(var i = 2; i < 100; i++) {
@@ -84,7 +84,9 @@ $(function() {
         }
       }
     }
-    if (result % 1 != 0) {
+    console.log(result);
+    if (result % 1 != 0 && operator != "sq-r") {
+      console.log(operator);
       result = strip(result);
     }
 
@@ -95,7 +97,6 @@ $(function() {
   function makeResultFirstOperand(num) {
     firstOperand = num;
     secondOperand = 0;
-    operator = 0;
   } 
 
   function clearAll() {
